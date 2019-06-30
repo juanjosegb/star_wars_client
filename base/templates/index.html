@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <input type="text" name="search"><br>
+    <button onclick="search()">Search</button>
+
+{% endblock %}
+
+{% block javascript %}
+
+    function search(){
+        $.ajax({
+
+            url : {% url 'search' %},
+            type : 'POST',
+            data : {
+                'search' : $('#search').val()
+            },
+            dataType:'json',
+            success : function(data) {}
+        });
+    }
+
+{% endblock %}
