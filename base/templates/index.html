@@ -15,7 +15,8 @@
             url : {% url 'search' %},
             type : 'POST',
             data : {
-                'search' : $('#search').val()
+                'search' : $('#search').val(),
+                'csrfmiddlewaretoken' : {{ csrf_token }}
             },
             dataType:'json',
             success : function(data) {}
