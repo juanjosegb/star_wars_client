@@ -6,7 +6,7 @@ def get_all_film_names():
     r = requests.get(url)
     films = r.json()
     film_list = films['results']
-    film_names = []
+    film_names = dict()
     for film in film_list:
-        film_names.append(film['title'])
+        film_names[film['title']] = film['url']
     return film_names
