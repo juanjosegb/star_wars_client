@@ -1,4 +1,4 @@
-from django.contrib.sites import requests
+import requests
 
 
 def get_all_film_names():
@@ -8,5 +8,5 @@ def get_all_film_names():
     film_list = films['results']
     film_names = dict()
     for film in film_list:
-        film_names[film['title']] = film['url']
+        film_names[film['title']] = film['url'].rsplit('/', 1)
     return film_names

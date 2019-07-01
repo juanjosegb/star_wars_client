@@ -1,12 +1,13 @@
-from django.contrib.sites import requests
+import requests
 
 
-def get_film(url):
+def get_film(pk):
+    url = 'http://swapi.co/api/films/' + str(pk)
     r = requests.get(url)
     film = r.json()
     film_information = dict()
     film_information['title'] = film['title']
-    film_information['opening'] = film['opening']
+    film_information['opening'] = film['opening_crawl']
     film_information['director'] = film['director']
     film_information['producer'] = film['producer']
     film_information['release_date'] = film['release_date']

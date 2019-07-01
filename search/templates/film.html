@@ -1,0 +1,17 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+    {% for result in film_info %}
+
+        {{ result }}
+
+    {% endfor %}
+
+    {% for result in film_names %}
+
+        {{ result }}
+
+    {% endfor %}
+
+{% endblock %}

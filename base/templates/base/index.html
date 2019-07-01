@@ -2,8 +2,9 @@
 
 {% block content %}
 
-    <input type="text" name="search"><br>
+    <input type="text" name="search" id="search"><br>
     <button onclick="search()">Search</button>
+    <ul id="film_list"></ul>
 
 {% endblock %}
 
@@ -16,10 +17,16 @@
             type : 'POST',
             data : {
                 'search' : $('#search').val(),
-                'csrfmiddlewaretoken' : {{ csrf_token }}
+                'csrfmiddlewaretoken' : '{{ csrf_token }}'
             },
             dataType:'json',
-            success : function(data) {}
+            success : function(data) {
+                for(var key in data){
+                    var pk = data[key];
+                    var urlRedirect = "{% url 'film' pk=1 %}";
+                    $('#film_list:eq(0)').before("<li><a href=" + urlRedirect + ">" + key + "</li>")
+                }
+            }
         });
     }
 
