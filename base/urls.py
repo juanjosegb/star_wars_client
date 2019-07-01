@@ -1,6 +1,8 @@
-from django.urls import path
-from base import views
+from django.urls import path, include
+from base.views import base, create_user
 
 urlpatterns = [
-    path('index/', views.Index.as_view(), name='index')
+    path('', base.Index.as_view(), name='index'),
+    path('create_user/', create_user.CustomUserAdmin.as_view(), name='index'),
+    path('accounts/', include('django.contrib.auth.urls'))
 ]
