@@ -15,12 +15,6 @@ def search_films(request):
     return JsonResponse(result_list)
 
 
-class FilmDetailView(TemplateView):
+class SearchView(TemplateView):
+    template_name = "search.html"
 
-    def get(self, request, *args, **kwargs):
-        pk = self.kwargs['pk']
-        film_information_list = films.get_film(pk)
-        film_names = film_information_list.keys()
-        film_info = film_information_list.values()
-        return render(request, "film.html", {'film_names': film_names,
-                                             'film_info': film_info})

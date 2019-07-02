@@ -3,5 +3,5 @@ from search import views
 
 urlpatterns = [
     path('search/', views.search_films, name='search'),
-    path('film/<int:pk>', views.FilmDetailView.as_view(), name='film')
+    path('search_list/', views.SearchView.as_view(), name='search_list')
 ]

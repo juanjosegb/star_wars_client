@@ -2,34 +2,7 @@
 
 {% block content %}
 
-    <input type="text" name="search" id="search"><br>
-    <button onclick="search()">Search</button>
-    <ul id="film_list"></ul>
     <a href="{% url 'history_list' pk=user.pk %}">History</a>
-
-{% endblock %}
-
-{% block javascript %}
-
-    function search(){
-        $.ajax({
-
-            url : {% url 'search' %},
-            type : 'POST',
-            data : {
-                'search' : $('#search').val(),
-                'csrfmiddlewaretoken' : '{{ csrf_token }}'
-            },
-            dataType:'json',
-            success : function(data) {
-                $('#film_list').empty();
-                for(var key in data){
-                    var urlRedirect = "{% url 'film' pk=1 %}";
-                    var urlRedirectReplaced = urlRedirect.replace("1", key);
-                    $('#film_list:eq(0)').before("<li><a href=" + urlRedirectReplaced + ">" + key + "</li>")
-                }
-            }
-        });
-    }
+    <a href="{% url 'search_list' %}">Search</a>
 
 {% endblock %}

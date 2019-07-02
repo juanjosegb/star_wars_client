@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'base',
     'consumer',
     'search',
-    'history'
+    'history',
+    'film'
 ]
 
 MIDDLEWARE = [
