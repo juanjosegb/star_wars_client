@@ -12,6 +12,9 @@
     </head>
     <body style="background: black;">
         <div class="page-header">
+            {% if user.is_authenticated %}
+                <a style="color: white; float: right;" href="{% url 'logout' %}">LOGOUT</a>
+            {% endif %}
             <h1 class="text-center" style="color: white">Star Wars Client</h1>
         </div>
 
