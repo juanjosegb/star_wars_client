@@ -1,9 +1,10 @@
+from braces.views import LoginRequiredMixin
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from consumer.views import films
 
 
-class FilmDetailView(TemplateView):
+class FilmDetailView(LoginRequiredMixin, TemplateView):
 
     def get(self, request, *args, **kwargs):
         pk = self.kwargs['pk']
