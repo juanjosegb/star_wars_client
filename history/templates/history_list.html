@@ -4,9 +4,11 @@
 
     {% for object in objects %}
 
-        {{ object.user.name }}
-        {{ object.page }}
-        {{ object.created_at }}
+        <ul>
+            <li>
+                {{ object.user.name }} - {{ object.page }} - {{ object.created_at }}
+            </li>
+        </ul>
 
     {% endfor %}
 
