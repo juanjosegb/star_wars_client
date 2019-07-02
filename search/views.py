@@ -1,8 +1,6 @@
 from django.http import JsonResponse
-from django.shortcuts import render
 from django.views.generic import TemplateView
 
-from consumer.views import films
 from search import utils
 
 from consumer.views import all_films

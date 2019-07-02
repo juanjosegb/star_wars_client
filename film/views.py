@@ -8,6 +8,4 @@ class FilmDetailView(TemplateView):
     def get(self, request, *args, **kwargs):
         pk = self.kwargs['pk']
         film_information_list = films.get_film(pk)
-        film_names = film_information_list.keys()
-        film_info = film_information_list.values()
-        return render(request, "film.html", {'film_names': film_names, 'film_info': film_info})
+        return render(request, "film.html", {'film_info': film_information_list})

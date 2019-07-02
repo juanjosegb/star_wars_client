@@ -1,0 +1,11 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+    {% for result_info in vehicle_info; result_name in vehicle_names %}
+
+        {{ result_info }} {{ result_name }}
+
+    {% endfor %}
+
+{% endblock %}

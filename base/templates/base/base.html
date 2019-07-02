@@ -7,16 +7,17 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
-    <body>
+    <body style="background: url({% static 'background.png' %})">
         <div class="page-header">
-            <h1><a href="/index">Star Wars Client</a></h1>
+            <h1 class="text-center">Star Wars Client</h1>
         </div>
 
         <div class="content container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                     {% block content %}
                     {% endblock %}
                 </div>

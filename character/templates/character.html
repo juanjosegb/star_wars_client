@@ -1,0 +1,11 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+    {% for result_info in character_info; result_name in character_names %}
+
+        {{ result_info }} {{ result_name }}
+
+    {% endfor %}
+
+{% endblock %}
