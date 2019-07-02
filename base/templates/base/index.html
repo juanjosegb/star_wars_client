@@ -22,10 +22,10 @@
             },
             dataType:'json',
             success : function(data) {
+                $('#film_list').empty();
                 for(var key in data){
-                    var pk = data[key];
                     var urlRedirect = "{% url 'film' pk=1 %}";
-                    var urlRedirectReplaced = urlRedirect.replace("1", pk);
+                    var urlRedirectReplaced = urlRedirect.replace("1", key);
                     $('#film_list:eq(0)').before("<li><a href=" + urlRedirectReplaced + ">" + key + "</li>")
                 }
             }
