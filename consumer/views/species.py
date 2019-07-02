@@ -1,7 +1,9 @@
-from django.contrib.sites import requests
+import requests
 
 
-def get_specie(url):
+
+def get_specie(pk):
+    url = 'http://swapi.co/api/species/' + str(pk)
     r = requests.get(url)
     film = r.json()
     film_information = dict()

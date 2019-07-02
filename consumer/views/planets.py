@@ -1,7 +1,9 @@
-from django.contrib.sites import requests
+import requests
 
 
-def get_planet(url):
+
+def get_planet(pk):
+    url = 'http://swapi.co/api/planets/' + str(pk)
     r = requests.get(url)
     planet = r.json()
     planet_information = dict()

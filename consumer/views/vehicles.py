@@ -1,7 +1,8 @@
-from django.contrib.sites import requests
+import requests
 
 
-def get_vehicle(url):
+def get_vehicle(pk):
+    url = 'http://swapi.co/api/vehicles/' + str(pk)
     r = requests.get(url)
     vehicle = r.json()
     vehicle_information = dict()

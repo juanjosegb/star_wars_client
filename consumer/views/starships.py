@@ -1,7 +1,9 @@
-from django.contrib.sites import requests
+import requests
 
 
-def get_starship(url):
+
+def get_starship(pk):
+    url = 'http://swapi.co/api/starships/' + str(pk)
     r = requests.get(url)
     starship = r.json()
     starship_information = dict()

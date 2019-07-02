@@ -1,7 +1,8 @@
 import requests
 
 
-def get_character(url):
+def get_character(pk):
+    url = 'http://swapi.co/api/people/' + str(pk)
     r = requests.get(url)
     character = r.json()
     character_information = dict()
