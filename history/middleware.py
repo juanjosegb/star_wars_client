@@ -1,16 +1,17 @@
 from history.utils import save_history_page
 
 
-class SetLastVisitMiddleware(object):
+class SetLastVisitMiddleware:
 
     def __init__(self, get_response):
         self.get_response = get_response
 
     def __call__(self, request):
-        return self.get_response(request)
-
-    def process_response(self, request, response):
-        if request.user.is_authenticated():
-            save_history_page(request.user, request.path_info)
-
+        self.process_request(request)
+        response = self.get_response(request)
         return response
+
+    def process_request(self, request):
+        if request.user.is_authenticated:
+            save_history_page(request.path_info, request.user)
+        return None
