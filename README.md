@@ -2,7 +2,7 @@
 STAR WARS CLIENT Release 0.0.1
 ==========
 
-Instalation
+Using Star Wars Client
 --------------------
 
 + Register as user.
